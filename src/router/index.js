@@ -1,15 +1,20 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import App from '../component/App';
+import StartPage from '../Page/StartPage';
+import LoginPage from '../Page/LoginPage';
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <App></App>,
+        element: <StartPage></StartPage>,
     },
     {
         path: '/about',
         element: <div>About</div>,
+    },
+    {
+        path: '/login',
+        element: <LoginPage />,
     },
     {
         path: '*',

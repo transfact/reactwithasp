@@ -1,0 +1,11 @@
+.main.header {
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 30px;
+}
