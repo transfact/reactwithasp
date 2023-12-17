@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import App from '../component/App';
 import MainHeader from '../component/Headers/MainHeader';
 import '../constant/headerCss/MainHeader.css';

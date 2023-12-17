@@ -14,3 +14,18 @@ export async function GetMember() {
         return err;
     }
 }
+
+export async function GetMemberByCookie() {
+    try {
+        const result = await axios({ method: 'GET', url: 'https://localhost:7281/api/Members/Cookie', withCredentials: true });
+        if (result.status === 200) {
+            return result.data;
+        } else {
+            return result;
+        }
+    } catch (e) {
+        console.log(e);
+        const err = { code: 'ERR NETWORK' };
+        return err;
+    }
+}

@@ -7,12 +7,14 @@ export async function PostLoginMember(loginData) {
             method: 'POST',
             url: 'https://localhost:7281/api/Members/Login',
             data: loginData,
+            withCredentials: true,
         });
         console.log('resu', result);
         if (result.status === 201) {
-            return result.data;
+            return result;
         } else {
-            return result.error;
+            alert('로그인 에러 : 정보가 틀렸습니다.');
+            return result;
         }
     } catch (e) {
         console.log(e);
