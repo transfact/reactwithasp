@@ -4,3 +4,13 @@
 //그래서 cookie있음 / store 데이터 있음 -> 편안
 // cookie 없음 / store 데이터 있음 -> 로그인 만료 페이지
 // cookie 없음 / store 데이터 없음 -> 홈으로 튕
+
+import { configureStore } from '@reduxjs/toolkit';
+
+const store = configureStore({
+    reducer: {
+        site,
+    },
+});
+
+export default store;
