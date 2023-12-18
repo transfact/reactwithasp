@@ -7,8 +7,10 @@ export default function useLoginCheck() {
     useEffect(() => {
         async function getData() {
             const result = await GetMemberByCookie();
-            console.log('데이터받기', result);
-            setMember(result.nickName);
+            if (result.code == 'ERR NETWORK' || result.code == 'ERR_BAD_REQUEST') {
+                return;
+            }
+            setMember(result.data.nickName);
         }
         getData();
     }, [cookies]);

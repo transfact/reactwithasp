@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import LoginButton from './LoginButton';
-import useLoginCheck from '../../CustomHook/useLoginCheck';
 
 export default function LoginHeaderComponent() {
     const [id, setId] = useState('');

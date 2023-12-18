@@ -11,7 +11,6 @@ export default function LoginButton(props) {
         }
         e.preventDefault();
         const result = await PostLoginMember({ email: email, pw: pw });
-        console.log(result);
         if (result.code == 'ERR NETWORK') {
             alert('서버 연결 실패');
         } else if (result.status == 201) {
