@@ -4,6 +4,7 @@ import LoginComponent from '../component/LoginCompo/LoginComponent';
 
 export default function LoginPage() {
     const loginCheck = useLoginCheck();
+    console.log(loginCheck);
     return (
         <>
             <MainHeader></MainHeader>
