@@ -4,6 +4,9 @@ import StartPage from '../Page/StartPage';
 import LoginPage from '../Page/LoginPage';
 import PostPage from '../Page/PostPage';
 import AuthProtector from '../component/AuthProtector/AuthProtector';
+import PostComponent from '../component/PostCompo/PostComponent';
+import PostShowPage from '../Page/PostShowPage';
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -19,11 +22,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/post',
-        element: (
-            <AuthProtector>
-                <PostPage />
-            </AuthProtector>
-        ),
+        element: <AuthProtector Renders={PostPage} />,
+    },
+    {
+        path: '/post/:id',
+        element: <AuthProtector Renders={PostShowPage} />,
     },
     {
         path: '*',
