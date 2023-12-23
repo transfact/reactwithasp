@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import StartPage from '../Page/StartPage';
 import LoginPage from '../Page/LoginPage';
 import PostPage from '../Page/PostPage';
+import AuthProtector from '../component/AuthProtector/AuthProtector';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -18,7 +19,11 @@ const router = createBrowserRouter([
     },
     {
         path: '/post',
-        element: <PostPage />,
+        element: (
+            <AuthProtector>
+                <PostPage />
+            </AuthProtector>
+        ),
     },
     {
         path: '*',
