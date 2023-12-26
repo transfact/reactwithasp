@@ -1,9 +1,9 @@
-import ReactQuill from "react-quill";
+import PostAddComponent from '../component/PostAddCompo/PostAddComponent';
 
-export default function PostAddPage(){
-
-
-    return <>
-        <ReactQuill />
-    </>;
+export default function PostAddPage() {
+    return (
+        <>
+            <PostAddComponent />
+        </>
+    );
 }

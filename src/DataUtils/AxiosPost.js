@@ -22,3 +22,26 @@ export async function PostLoginMember(loginData) {
         return err;
     }
 }
+
+export async function PostAddEditor(title, post) {
+    console.log(title);
+    try {
+        const result = await axios({
+            method: 'POST',
+            url: 'https://localhost:7281/api/Blogs',
+            data: { title, post },
+            withCredentials: true,
+        });
+        console.log('resu', result);
+        if (result.status === 201) {
+            return result;
+        } else {
+            alert('로그인 에러 : 정보가 틀렸습니다.');
+            return result;
+        }
+    } catch (e) {
+        console.log(e);
+        const err = { code: 'ERR NETWORK' };
+        return err;
+    }
+}
