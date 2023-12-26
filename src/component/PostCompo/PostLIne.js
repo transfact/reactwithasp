@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { DelBlogById } from '../../DataUtils/AxiosDelete';
+import {Delspace} from '../SweetAlert/DelAlert';
 
 const FlexDiv = styled.div`
     display: flex;
@@ -12,10 +14,11 @@ const FlexLinkDiv = styled.div`
 `;
 
 export default function PostLine({ blogInfo }) {
-    const handleDel = () => {
+    const handleDel = async (id) => {
+        const result= await DelBlogById(id)
+        Delspace()
         console.log('del');
     };
-
     //console.log(blogInfo);
     return (
         <>
@@ -27,7 +30,7 @@ export default function PostLine({ blogInfo }) {
                     </Link>
                 </FlexLinkDiv>
 
-                <button onClick={handleDel}>DEL</button>
+                <button onClick={() => {handleDel(blogInfo.blogId)}}>DEL</button>
             </FlexDiv>
 
             <hr />

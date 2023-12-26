@@ -4,7 +4,7 @@ import StartPage from '../Page/StartPage';
 import LoginPage from '../Page/LoginPage';
 import PostPage from '../Page/PostPage';
 import AuthProtector from '../component/AuthProtector/AuthProtector';
-import PostComponent from '../component/PostCompo/PostComponent';
+import PostAddPage from '../Page/PostAddPage';
 import PostShowPage from '../Page/PostShowPage';
 
 const router = createBrowserRouter([
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
     {
         path: '/post',
         element: <AuthProtector Renders={PostPage} />,
+    },
+    {
+        path: '/post/edit',
+        element: <AuthProtector Renders={PostAddPage} />,
     },
     {
         path: '/post/:id',
